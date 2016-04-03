@@ -41,7 +41,7 @@
                         <!-- span.edit-link --><!-- /span.edit-link -->
                     <!-- /header.entry-footer -->
                 <!-- /article -->
-			<?php endwhile; ?>        		
+			<?php endwhile; ?>
         	</main>
 
 <?php get_sidebar(); ?>
@@ -51,8 +51,15 @@
 
 <?php get_footer(); ?>
             <!-- footer -->
+                <!-- .widget-container -->
+                    <!-- .row -->
+                        <!-- .widget-area -->
+                            <!-- widget markup goes here -->
+                        <!-- /.widget-area -->
+                    <!-- /.row -->
+                <!-- /.widget-container -->
+                <!-- .sit-info --><!-- /.sit-info -->
             <!-- /footer -->
-
         <!-- /.wrapper -->
     <!-- /body -->
 <!-- /html -->

@@ -28,8 +28,6 @@
 /**
  * Load external libraries required by Grafipress.
  */
-// TODO Pull tha-theme-hooks.php from github with gulp task
-require get_template_directory() . '/lib/tha-theme-hooks.php';
 // TODO Pull bootstrap-wp-navwalker.php from github with gulp task
 require get_template_directory() . '/lib/bootstrap-wp-navwalker.php';
 // TODO Pull bootstrap-ninja-forms.php from github with gulp task
