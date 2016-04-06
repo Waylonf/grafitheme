@@ -8,9 +8,9 @@
  *
  * This file is a core Grafipress file and should not be edited.
  *
- * @package     WordPress
- * @subpackage  G11
- * @since       G11 4.0.0
+ * @package 	WordPress
+ * @subpackage 	{THEME-NAME}
+ * @since 		{THEME-NAME} {THEME-VERSION}
  */
 
  /**
@@ -120,10 +120,6 @@ endif;
  * Get possesive form
  *
  * Returns a string with the correct possesive form.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 if( ! function_exists( 'gws_posesive') ) :
 	function gws_posesive( $string ) {
@@ -135,12 +131,6 @@ endif;
  * Stacked icon markup.
  *
  * Return markup for a stacked icon set.
- *
- * @since 1.5.0
- *
- * @param string $redirect Optional path to redirect to on login/logout.
- * @param boolean $echo Default to echo and not return the link.
- * @return string|null String when retrieving, null when displaying.
  */
 if( ! function_exists( 'stacked_icon') ) :
 	function stacked_icon( $icon = '', $shape = 'fa-circle', $echo = false ) {
@@ -167,10 +157,6 @@ endif;
  * Build physical address
  *
  * General the physical address as a urlencoded string.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 if( ! function_exists( 'gws_full_physical_address' ) ) :
 	function gws_full_physical_address() {
@@ -192,10 +178,6 @@ endif;
  * Display Co-ordinates
  *
  * Retrieve the co-ordinates of a give address.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 function gws_display_coordinates( $address = '' ) {
 
@@ -226,10 +208,6 @@ function gws_display_coordinates( $address = '' ) {
  *
  * This function is used to return the permalink of a page
  * outside of the loop.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 if( ! function_exists( 'gws_get_permalink') ) :
 	function gws_get_permalink( ) {
@@ -247,10 +225,6 @@ endif;
  * Hex to RGBA
  *
  * this function converts a HEX color to rgba.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 if( ! function_exists( 'hex2rgba') ) :
 	function hex2rgba( $color, $opacity = false ) {
@@ -293,12 +267,6 @@ endif;
  *
  * Displays a link, which allows users to navigate to the Log In page to log in
  * or log out depending on whether they are currently logged in.
- *
- * @since 1.5.0
- *
- * @param string $redirect Optional path to redirect to on login/logout.
- * @param boolean $echo Default to echo and not return the link.
- * @return string|null String when retrieving, null when displaying.
  */
 if( ! function_exists( 'icon_loginout') ) :
 	function icon_loginout( $redirect = '', $echo = true ) {
@@ -359,13 +327,6 @@ function colourBrightness($hex, $percent) {
 
 /**
  * Display custom edit post link for post.
- *
- * @since 1.0.0
- *
- * @param string $text Optional. Anchor text.
- * @param string $before Optional. Display before edit link.
- * @param string $after Optional. Display after edit link.
- * @param int $id Optional. Post ID.
  */
 function gws_edit_post_link( $edit_text = null, $dashboard_text = null, $id = 0 ) {
     if ( ! $post = get_post( $id ) ) :
@@ -411,10 +372,6 @@ function gws_edit_post_link( $edit_text = null, $dashboard_text = null, $id = 0 
  * Acronym or Abbrieviation
  *
  * Generate accronym or string of a string.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 if( ! function_exists( 'abbreviation' ) ) :
 	function abbreviation( $str, $as_space = array( '-' ) ) {
@@ -433,10 +390,6 @@ endif;
  * Build physical address
  *
  * General the physical address as a urlencoded string.
- *
- * @since 1.0.0
- * @author Waylon Fourie
- * @uses get_permalink()
  */
 if( ! function_exists( 'gws_url_encode_physical_address' ) ) :
 	function gws_url_encode_physical_address() {
@@ -452,4 +405,20 @@ if( ! function_exists( 'gws_url_encode_physical_address' ) ) :
 
 		return $address;
 	}
+endif;
+
+/**
+ * Return custom post type description
+ *
+ * This function will return the description of a custom post type in
+ * a page.
+ */
+if ( ! function_exists( 'grafipress_post_type_description' ) ) :
+    function grafipress_post_type_description( $post_type = '' ) {
+        $obj = get_post_type_object( $post_type );
+
+        if ( ! empty( $obj ) ) :
+            echo $obj->description;
+        endif;
+    }
 endif;
