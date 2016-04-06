@@ -30,6 +30,7 @@
  * @todo Create Ninja-Forms hooks to add Bootstrap css classes
  * @todo Check Customizer files for consistancy and correct file names
  * @todo Add lightbox script to package
+ * @todo Add admin notice to check if DEBUG is set to true or not on live server
  */
 
 /**
@@ -79,6 +80,13 @@ require get_template_directory() . '/inc/grafipress-welcome-widget.php';
 require get_template_directory() . '/inc/grafipress-custom-header.php';
 require get_template_directory() . '/inc/grafipress-additional-css.php';
 require get_template_directory() . '/inc/grafipress-navigation.php';
+
+/**
+ * Load sandbox.php
+ */
+if (defined('WP_DEBUG') && true === WP_DEBUG) :
+    require get_template_directory() . '/inc/grafipress-sandbox.php';
+endif;
 
 /** If Kirki is installed as a plugin and active load the customizer content */
 if ( class_exists( 'Kirki' ) ) :
