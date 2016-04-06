@@ -1,14 +1,21 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
+ * WARNING: This file is part of the core {THEME-NAME} framework. DO NOT edit this
+ * file under any circumstances. Please do all modifications
+ * in the form of a child theme.
+ *
+ * This file contains functions required to ehnace the navigation
+ *
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
+ */
+
+/**
  * Highlight search terms.
  *
  * This function will highlight any text that matches the term that
  * was searched.
- *
- * @since 4.0.0
- *
- * @link http://www.grafipress.co.za
- *
  */
 if ( ! function_exists( 'gws_highlight_search_term' ) ) {
 	function gws_highlight_search_term( $text ){
@@ -28,9 +35,6 @@ if ( ! function_exists( 'gws_highlight_search_term' ) ) {
  *
  * This function sets the autofocus attribute on certain
  * situations for a search form.
- *
- * @since 4.0.0
- * @link http://www.grafipress.co.za
  */
 if( ! function_exists( 'gws_search_autofocus') ) {
 	function gws_search_autofocus() {
@@ -50,9 +54,6 @@ if( ! function_exists( 'gws_search_autofocus') ) {
  *
  * This function sets the placeholder attribute on certain
  * situations for a search form.
- *
- * @since 4.0.0
- * @link http://www.grafipress.co.za
  */
 if( ! function_exists( 'gws_search_placeholder') ) {
 	function gws_search_placeholder() {
@@ -72,11 +73,6 @@ if( ! function_exists( 'gws_search_placeholder') ) {
  *
  * This function will return the count of all search results
  * as well as the rest of the page heading for the search page.
- *
- * @since 4.0.0
- *
- * @link http://www.grafipress.co.za
- *
  */
 if( !function_exists( 'gws_search_heading') ) {
 	function gws_search_heading() {
@@ -99,11 +95,6 @@ if( !function_exists( 'gws_search_heading') ) {
  *
  * This function will count search results and if only one
  * result is found it will automatically redirect to the result.
- *
- * @since 1.0.0
- * @package Wordpress
- * @subpackage G12
- * @link http://www.grafipress.co.za
  */
 if( ! function_exists( 'gws_search_redirect' ) ) {
 	function gws_search_redirect() {
