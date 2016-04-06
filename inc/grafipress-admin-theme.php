@@ -9,6 +9,7 @@
  * @package     WordPress
  * @subpackage  {THEME-NAME}
  * @since       {THEME-NAME} {THEME-VERSION}
+ * @todo 		Check if file exists before running this class
  */
 class GWS_Color_Schemes {
 
@@ -44,7 +45,6 @@ $gws_colors = new GWS_Color_Schemes;
  * Force default admin colour scheme.
  *
  * Forces and sets all admin colour schemes to 'grafika'.
- * @since 1.0.0
  */
 if ( !function_exists( 'gws_default_admin_color' ) ) :
 	function gws_default_admin_color( $result ) {
@@ -57,7 +57,6 @@ endif;
  * Remove admin colour scheme selector.
  *
  * Removes the admin colour scheme selector completly.
- * @since 1.0.0
  */
 if( is_admin() ) :
 	remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
