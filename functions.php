@@ -32,19 +32,26 @@
  * @todo Add lightbox script to package
  * @todo Add admin notice to check if DEBUG is set to true or not on live server
  * @todo Filter admin menu builder to add select for FontAwesome icons
- */
-
-/**
- * Load external libraries required by Grafipress.
+ * @todo Create search results page template
+ * @todo Create 404 results page template
+ * @todo Create base styles sass file for default style rules & declarations
+ * @todo Debug and implement sidebar selection functionality
+ * @todo Create social sharing template part with options.
+ * @todo Hook, code and format WordPress internal mail functionality
+ * @todo Design and code shortcode library
  * @todo Pull bootstrap-wp-navwalker.php from github with gulp task
  * @todo Pull bootstrap-ninja-forms.php from github with gulp task
  */
+
+//-----------------------------------------------------------------------
+// Load vendor classes, functions and scripts.
+//-----------------------------------------------------------------------
 require get_template_directory() . '/lib/bootstrap-wp-navwalker.php';
 require get_template_directory() . '/lib/bootstrap-ninja-forms.php';
 
-/**
- * Load helper arrays
- */
+//-----------------------------------------------------------------------
+// Load helper arrays
+//-----------------------------------------------------------------------
 require get_template_directory() . '/inc/grafipress-arrays.php';
 
 //-----------------------------------------------------------------------
@@ -62,9 +69,9 @@ define( 'GWS_TELEPHONE', '0825714130');
 define( 'GWS_FAX', '0865504459');
 define( 'GWS_EMAIL', 'info@grafika.co.za');
 
-/**
- * Load theme essentials functions used in Grafipress.
- */
+//-----------------------------------------------------------------------
+// Load theme essentials functions used in Grafipress.
+//-----------------------------------------------------------------------
 require get_template_directory() . '/inc/grafipress-admin-theme.php';
 require get_template_directory() . '/inc/grafipress-meta-boxes.php';
 require get_template_directory() . '/inc/grafipress-activation.php';
@@ -82,20 +89,22 @@ require get_template_directory() . '/inc/grafipress-custom-header.php';
 require get_template_directory() . '/inc/grafipress-additional-css.php';
 require get_template_directory() . '/inc/grafipress-navigation.php';
 
-/**
- * Load sandbox.php
- */
+//-----------------------------------------------------------------------
+// Conditionally load sandbox.php
+//-----------------------------------------------------------------------
 if (defined('WP_DEBUG') && true === WP_DEBUG) :
     require get_template_directory() . '/inc/grafipress-sandbox.php';
 endif;
 
-/** If Kirki is installed as a plugin and active load the customizer content */
+//-----------------------------------------------------------------------
+// If Kirki installed and active, load base customizer options
+//-----------------------------------------------------------------------
 if ( class_exists( 'Kirki' ) ) :
 	require get_template_directory() . '/inc/grafipress-customizer.php';
 endif;
 
-/**
- * Load theme widgets used in Grafipress.
- */
+//-----------------------------------------------------------------------
+// Load theme widgets
+//-----------------------------------------------------------------------
 require get_template_directory() . '/inc/widgets/grafipress-profile-widget.php';
 require get_template_directory() . '/inc/widgets/grafipress-vcard-widget.php';
