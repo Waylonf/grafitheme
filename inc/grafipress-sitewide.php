@@ -130,3 +130,38 @@ if ( ! function_exists( 'grafipress_missing_files_notice' ) ) :
 	}	
 endif;
 add_action( 'admin_notices', 'grafipress_missing_files_notice' );
+
+/**
+ * Embed Analytics
+ * 
+ * Include analytics code into each page in theme
+ * @todo Correct checks and variables so that snippet is included
+ * @todo Confirm snippet is current and best practice.
+ */
+if ( ! function_exists( 'gws_google_analytics' ) ) :
+	function gws_google_analytics() { ?>
+	    <script>
+	        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	        e.src='//www.google-analytics.com/analytics.js';
+	        r.parentNode.insertBefore(e,r)}(window,document,'script','ga' ) );
+	        ga( 'create','<?php echo get_theme_mod( 'analytics_code', '') ?>' );ga( 'send','pageview' );
+	    </script>
+	<?php }
+	if ( !current_user_can( 'manage_options' ) && get_theme_mod( 'include_analytics', '' ) && get_theme_mod( 'analytics_code', '') ) :
+	    add_action( 'wp_footer', 'gws_google_analytics', 20 );
+	endif;
+endif;
+
+/**
+ * Remove IE link borders
+ * 
+ * Remove the stippled borders around links for IE
+ */
+if ( ! function_exists( 'gws_ie_link_border_removal' ) ) :
+	function gws_ie_link_border_removal() {
+		echo '<meta http-equiv="X-UA-Compatible" content="IE=9" />' . "\n";
+	}
+	add_action( 'wp_head', 'gws_ie_link_border_removal');
+endif;
