@@ -17,9 +17,6 @@
  * Company Name Shortcode.
  *
  * Add a shortcode to display the company name.
- *
- * @since 4.0.0
- * @link http://www.grafipress.co.za
  */
 function gws_client_company_name( $atts ) {
      return ucwords( CLIENT_FULL_COMPANY_NAME );
@@ -31,9 +28,6 @@ add_shortcode( 'company_name', 'gws_client_company_name' );
  *
  * Adds a shortcode to output the correct html5 abbrieviation or
  * accronym markup.
- *
- * @since 4.0.0
- * @link http://www.grafipress.co.za
  */
 function gws_abbr_shortcode( $atts ) {
     extract( shortcode_atts( array( 'title' => '', 'abbreviation' => '' ), $atts ) );
@@ -55,9 +49,6 @@ add_shortcode( 'abbr', 'gws_abbr_shortcode' );
  * Company Name Shortcode
  *
  * Adds a shortcode to output a company name.
- *
- * @since 4.0.0
- * @link http://www.grafipress.co.za
  */
 function gws_company_name_shortcode( $atts ) {
     extract( shortcode_atts( array( 'display_slogan' => '' ), $atts ) );
