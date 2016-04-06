@@ -20,17 +20,24 @@
  * For more information on hooks, actions, and filters,
  * {@link https://codex.wordpress.org/Plugin_API}
  *
- * @package WordPress
- * @subpackage Grafipress
- * @since Grafipress 1.0
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
+ *
+ * @todo Remove Constant variables in functions.php used accross the site
+ * @todo Check for consistant docblock headers in all files
+ * @todo Wrap all function in child theme friendly check function
+ * @todo Create Ninja-Forms hooks to add Bootstrap css classes
+ * @todo Check Customizer files for consistancy and correct file names
+ * @todo Add lightbox script to package
  */
 
 /**
  * Load external libraries required by Grafipress.
+ * @todo Pull bootstrap-wp-navwalker.php from github with gulp task
+ * @todo Pull bootstrap-ninja-forms.php from github with gulp task
  */
-// TODO Pull bootstrap-wp-navwalker.php from github with gulp task
 require get_template_directory() . '/lib/bootstrap-wp-navwalker.php';
-// TODO Pull bootstrap-ninja-forms.php from github with gulp task
 require get_template_directory() . '/lib/bootstrap-ninja-forms.php';
 
 /**
@@ -83,13 +90,6 @@ endif;
  */
 require get_template_directory() . '/inc/widgets/grafipress-profile-widget.php';
 require get_template_directory() . '/inc/widgets/grafipress-vcard-widget.php';
-
-//require get_template_directory() . '/inc/grafipress-theme-hooks.php';
-
-//add_action('get_header', 'remove_admin_login_header');
-function remove_admin_login_header() {
-	//remove_action('wp_head', '_admin_bar_bump_cb');
-}
 
 // Add Customizer section for Homepage
 Kirki::add_section( 'homepage', array(
@@ -175,39 +175,3 @@ Kirki::add_field( 'grafipress_settings', array(
         'off' => esc_attr__( 'Images', 'TEXTDOMAIN' ),
     ),
 ) );
-
-function prefix_add_custom_field_class_wrap( $field_wrap_class, $field_id ) {
-  if ( 12 == $field_id ) {
-    $field_wrap_class .= ' your-custom-class';
-  }
-  return $field_wrap_class;
-}
-add_filter( 'ninja_forms_field_wrap_class', 'prefix_add_custom_field_class_wrap', 10, 2 );
-
-function my_custom_function( $form_id ) {
-  echo 'ninja_forms_display_fields';
-}
-add_action( 'ninja_forms_display_fields', 'my_custom_function' );
-
-
-function test_function_001( $field_id, $data ){
-  // Default hook that Ninja Forms uses to output field label.
-  echo "string";
-}
-add_action( 'ninja_forms_display_field_label', 'test_function_001', 10, 2 );
-
-/**
- * Return custom post type description
- *
- * This function will return the description of a custom post type in
- * a page.
- */
-if ( ! function_exists( 'grafipress_post_type_description' ) ) :
-    function grafipress_post_type_description( $post_type = '' ) {
-        $obj = get_post_type_object( $post_type );
-
-        if ( ! empty( $obj ) ) :
-            echo $obj->description;
-        endif;
-    }
-endif;
