@@ -48,6 +48,7 @@
 //-----------------------------------------------------------------------
 require get_template_directory() . '/lib/bootstrap-wp-navwalker.php';
 require get_template_directory() . '/lib/bootstrap-ninja-forms.php';
+require get_template_directory() . '/menu-item-custom-fields/menu-item-custom-fields.php'; 
 
 //-----------------------------------------------------------------------
 // Load helper arrays

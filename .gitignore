@@ -23,3 +23,8 @@
 bower_components
 
 node_modules
+
+lib/wp-menu-item-custom-fields-master/readme.md
+lib/wp-menu-item-custom-fields-master/readme.txt
+lib/wp-menu-item-custom-fields-master/LICENSE
+lib/wp-menu-item-custom-fields-master/doc/menu-item-custom-fields-example.php
