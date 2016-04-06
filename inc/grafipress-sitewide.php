@@ -1,4 +1,15 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit;
+/**
+ * WARNING: This file is part of the core {THEME-NAME} framework. DO NOT edit this
+ * file under any circumstances. Please do all modifications
+ * in the form of a child theme.
+ *
+ * This file contains functions required to ehnace the navigation
+ *
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
+ */
 
 if ( ! function_exists( 'gws_copyright' ) ) {
 	function gws_copyright() {
