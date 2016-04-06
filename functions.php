@@ -31,6 +31,7 @@
  * @todo Check Customizer files for consistancy and correct file names
  * @todo Add lightbox script to package
  * @todo Add admin notice to check if DEBUG is set to true or not on live server
+ * @todo Filter admin menu builder to add select for FontAwesome icons
  */
 
 /**
@@ -98,88 +99,3 @@ endif;
  */
 require get_template_directory() . '/inc/widgets/grafipress-profile-widget.php';
 require get_template_directory() . '/inc/widgets/grafipress-vcard-widget.php';
-
-// Add Customizer section for Homepage
-Kirki::add_section( 'homepage', array(
-	'title'       => __( 'Home Page Setup', 'TEXTDOMAIN' ),
-	'priority'    => 10,
-	'panel'       => '',
-	'description' => __( 'Configure display and content displayed on the homepage', 'TEXTDOMAIN' ),
-) );
-
-/**
- * Add Homepage Intro text control.
- *
- * Add a textfield to capture the homepage intro in the Homepage Intro section.
- */
-Kirki::add_field( 'grafipress_settings', array(
-    'type'     => 'text',
-    'settings' => 'homepage_intro',
-    'tooltip'  => 'Enter your Homepage intro text here',
-    'label'    => __( 'Home Page Intro', 'TEXTDOMAIN' ),
-    'section'  => 'homepage',
-    'default'  => esc_attr__( 'We will ensure all your supporting company departmental needs are met freeing you up to run your business operations with success.', 'TEXTDOMAIN' ),
-    'priority' => $field_priority++,
-) );
-
-/**
- * Add About us intro text control.
- *
- * Add a textfield to capture the About Us intro in the Homepage Intro section.
- */
-Kirki::add_field( 'grafipress_settings', array(
-    'type'     => 'text',
-    'settings' => 'about_us_intro',
-    'tooltip'  => 'Enter your About Us intro text here',
-    'label'    => __( 'About Us Page Intro', 'TEXTDOMAIN' ),
-    'section'  => 'homepage',
-    'default'  => esc_attr__( 'We are committed to remain a valuble company assset to you. We focus on the triple bottom line of profit, people and our planet. We will never over promise and never under deliver.', 'TEXTDOMAIN' ),
-    'priority' => $field_priority++,
-) );
-
-/**
- * Add About us page link control.
- *
- * Add a page selection to link to the About Us page in the Homepage Intro section.
- */
-Kirki::add_field( 'grafipress_settings', array(
-	'type'        => 'dropdown-pages',
-	'settings'    => 'about_us_link',
-	'label'       => __( 'About us page link', 'TEXTDOMAIN' ),
-	'section'     => 'homepage',
-	'default'     => '',
-	'priority'    => 10,
-) );
-
-/**
- * Add Homepage Intro text control.
- *
- * Add a textfield to capture the homepage intro in the Homepage Intro section.
- */
-Kirki::add_field( 'grafipress_settings', array(
-    'type'     => 'text',
-    'settings' => 'about_us_link_text',
-    'tooltip'  => 'Enter the text for the About Us button',
-    'label'    => __( 'About us button text', 'TEXTDOMAIN' ),
-    'section'  => 'homepage',
-    'default'  => esc_attr__( 'More about us', 'TEXTDOMAIN' ),
-    'priority' => $field_priority++,
-) );
-
-/**
- * Add Service Icon toggle control
- *
- * Add a toggle control to load either image or icons for service section.
- */
-Kirki::add_field( 'grafipress_settings', array(
-    'type'        => 'toggle',
-    'settings'    => 'display_service_icons',
-    'label'       => __( 'Service icons', 'TEXTDOMAIN' ),
-    'section'     => 'homepage',
-    'default'     => '1',
-    'priority'    => 10,
-    'choices'     => array(
-        'on'  => esc_attr__( 'Icons', 'TEXTDOMAIN' ),
-        'off' => esc_attr__( 'Images', 'TEXTDOMAIN' ),
-    ),
-) );
