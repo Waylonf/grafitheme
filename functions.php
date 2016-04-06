@@ -89,6 +89,7 @@ require get_template_directory() . '/inc/grafipress-welcome-widget.php';
 require get_template_directory() . '/inc/grafipress-custom-header.php';
 require get_template_directory() . '/inc/grafipress-additional-css.php';
 require get_template_directory() . '/inc/grafipress-navigation.php';
+require get_template_directory() . '/inc/grafipress-nav-menu-fields.php';
 
 //-----------------------------------------------------------------------
 // Conditionally load sandbox.php
