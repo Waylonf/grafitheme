@@ -1,0 +1,262 @@
+/* Sass we write */
+.old-navbar-fixed-top {
+	position: fixed;
+	top: 0;
+	@include admin-sticky-fix;
+}
+
+body{
+	background: $brand-primary url( '../img/morukhole-ethics.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.wrapper{
+	background: rgba( 255,255,255,.80 );
+}
+
+.navbar{
+	border-bottom: solid 3px $brand-primary;
+	.dropdown-menu{
+		padding-right: 0;
+		margin-right: 0;
+		border-top: solid 3px $brand-primary;
+		li{
+			a{
+				padding: $font-size-base / 1.5;
+			}
+		}
+	}
+}
+
+.service-thumbnail{
+	border: solid 4px #fff;
+	@include box-shadow( 5px, 5px, 10px, #000, false );
+}
+
+.entry-header{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: $font-size-h1;
+}
+.page-navigation{
+	margin-bottom: $font-size-h2;
+	margin-top: $font-size-h2;
+}
+
+.breadcrumb-block{
+	background-color: $brand-primary;
+	color: #fff;
+	a{
+		color: #fff;
+	}
+	.searchform{
+		.input-group{
+			width: 100%
+		}
+		input{
+			background: lighten($brand-primary, 10%);
+			//background: #f60;
+			border: none;
+			border-radius: 0;
+			color: #fff;
+			//padding: 16px;
+			//width: 100%;
+			height: auto;
+			display: block;
+		}
+		input:hover, input:focus {
+			background: lighten($brand-primary, 15%);
+		}
+		input::-webkit-input-placeholder {
+			color: #fff !important;
+		}
+		 
+		input:-moz-placeholder { /* Firefox 18- */
+			color: #fff !important;  
+		}
+		 
+		input::-moz-placeholder {  /* Firefox 19+ */
+			color: #fff !important;  
+		}
+		 
+		input:-ms-input-placeholder {  
+			color: #fff !important;  
+		}
+		input.form-control, input.form-control:focus {
+			border:none;
+			box-shadow: none;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			-moz-transition: none;
+			-webkit-transition: none;		   
+		}
+	}
+}
+
+.navbar-brand {
+  	padding: 0px;
+	>img {
+	  height: 100%;
+	  //padding: 30px;
+	  //max-width: 100%;
+	}
+}
+
+.home{
+	.entry-title{
+		color: $brand-highlight;
+	}
+	a.read-more{
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $gray-dark;
+		&:hover{
+			color: $brand-highlight;
+			text-decoration: none;
+		}
+	}
+}
+
+.topbar{
+	//background-color: #fff;//$brand-primary;
+	padding: 0;
+	@include linearGradient( lighten( #262626, 30% ), lighten( #262626, 20% ) );
+	ul{
+		border: none;
+		margin: 0;
+		padding: 0;
+		//padding: $font-size-base;
+		.fa{
+			color: lighten( $brand-primary, 15% );
+		}
+		li{
+			padding: $font-size-base;
+			border-right: solid 1px lighten( #262626, 30%);
+			&:first-child{
+				border-left: solid 1px lighten( #262626, 30%);
+				border-right: solid 1px lighten( #262626, 30%);
+			}
+		}
+		p{
+			color: #fff;
+		}
+		a{
+			//border-left: solid 1px $brand-primary;
+			//padding: $font-size-base;
+			color: $gray-lighter;
+			text-decoration: none;
+			&:hover{
+				color: darken( $brand-primary, 15% );
+			}
+			.facebook{
+				color: $facebook_color;
+			}
+		}
+	}
+}
+
+.footer-wrapper{
+	//margin-top: $font-size-h1 * 2;
+	background: $brand-dark url('../img/paper.png') repeat;	
+}
+
+.widget-title{
+	text-transform: uppercase;
+}
+
+.widget-area{
+	color: lighten( $brand-dark, 40% );
+	line-height: 1.5;
+	.widget-container{
+		padding: $font-size-h1;
+		.widget-title{
+
+		}
+		p{}
+		ul{
+			@extend .list-unstyled;
+			padding-bottom: $font-size-base;
+		}
+		ol{
+			@extend .list-unstyled;
+			padding-bottom: $font-size-base;
+		}
+		a{
+			text-decoration: none;
+			transition: color .25s ease-in-out;
+			color: $brand-primary;
+			&:hover{
+				color: lighten( $brand-primary, 15% ); 
+			}
+		}
+
+	}
+}
+
+.home-services{
+	//background: $gray-lighter url( '../img/diagonal.png' ) repeat;
+	.fa-circle{
+		color: $brand-primary;
+	}
+}
+
+.ethics{
+	background: $brand-primary url( '../img/morukhole-ethics.jpg') no-repeat center center fixed;
+	background-size: cover;
+	color: #fff;
+	padding: $font-size-h1;
+	margin-top: $font-size-h1;
+	margin-bottom: 0;
+	border-bottom: solid 3px $brand-primary;
+	a{
+		margin-top: $font-size-h2;
+	}
+}
+
+.service-intro{
+	margin-bottom: $font-size-h2;
+}
+
+.site-info{
+	border-top: solid 3px $brand-primary;
+	border-top: solid 1px lighten( $brand-dark, 10% );
+	padding: $font-size-h2;
+	background-color: lighten( $brand-dark, 5% );
+	text-align: center;
+	color: lighten( $brand-dark, 30%);
+	a{
+		color: lighten( $brand-dark, 30%);
+		transition: color .25s ease-in-out;
+		&:hover{
+			text-decoration: none; 
+			color: $brand-primary;
+		}	
+	}
+}
+
+.client-slider{
+	.client-slider-heading{
+		text-transform: uppercase;
+		font-weight: 800;
+	}
+	text-align: center;
+	padding-top: $font-size-h1;
+	padding-bottom: $font-size-h1;
+	background-color: $gray-lighter;
+}
+
+.owl-carousel-header{
+	.owl-controls{
+		padding: 0!important;
+		margin:0!important;
+	}
+	.owl-pagination{
+		padding: $font-size-base;
+		background-color: $brand-primary;
+		.owl-page{
+			span{
+				background: #fff!important;
+			}
+		}
+	}
+}
