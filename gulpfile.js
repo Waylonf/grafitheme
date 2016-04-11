@@ -398,8 +398,8 @@ gulp.task('buildFiles', function() {
 * Look at src/images, optimize the images and send them to the appropriate place
 */
 gulp.task('buildImages', function() {
-	return 	gulp.src(['assets/img/**/*', '!assets/images/raw/**'])
-	.pipe(gulp.dest(build+'assets/img/'))
+	return 	gulp.src(['src/img/**/*', '!src/img/*.psd', '!src/img/**/*.ai', '!src/img/**/*.eps', '!src/img/**/*.cdr'])
+	.pipe(gulp.dest(build+'img/'))
 	.pipe(plugins.notify({ message: 'Images copied to buildTheme folder', onLast: true }));
 });
 
