@@ -9,9 +9,9 @@
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage GrafiPress
- * @since GrafiPress 1.0
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */ get_header(); ?>
 		<div class="wrapper" id="wrapper-index">
 			<?php tha_content_before(); ?>
