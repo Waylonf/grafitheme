@@ -13,8 +13,9 @@
     <?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package Shape
- * @since Shape 1.0
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */
 
 /**

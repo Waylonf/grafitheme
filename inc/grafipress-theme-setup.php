@@ -6,9 +6,9 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @package WordPress
- * @subpackage Grafipress
- * @since Grafipress 1.0
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */
 if ( ! function_exists( 'grafipress_setup' ) ) :
 	function grafipress_setup() {

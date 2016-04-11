@@ -3,7 +3,9 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package understrap
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */
 
 /**

@@ -9,9 +9,8 @@
  * This file is a core Grafipress file and should not be edited.
  *
  * @package     WordPress
- * @subpackage  G11
- * @since       G11 4.0.0
- * @see         http://themefoundation.com/wordpress-meta-boxes-guide/
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */
 
 /**

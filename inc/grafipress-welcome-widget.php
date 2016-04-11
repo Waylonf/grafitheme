@@ -5,8 +5,8 @@
  * modifications in the form of a child theme.
  *
  * @package     WordPress
- * @subpackage  Grafipress
- * @since       Grafipress 1.0.0
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */
 /**
  * Resister the custom 'Welcome Widget'

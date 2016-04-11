@@ -9,8 +9,8 @@
  * This file is a core Grafipress file and should not be edited.
  *
  * @package     WordPress
- * @subpackage  G11
- * @since       G11 4.0.0
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  */
 if ( ! function_exists( 'gws_theme_setup' ) ) :
     function gws_theme_setup() {

@@ -4,9 +4,9 @@
  *
  * Add class="thumbnail img-thumbnail" to attachment items.
  *
- * @since 4.0.0
- *
- * @link http://www.grafipress.co.za
+ * @package     WordPress
+ * @subpackage  {THEME-NAME}
+ * @since       {THEME-NAME} {THEME-VERSION}
  *
  */
 if ( ! function_exists( 'gws_attachment_link_class' ) ) { 
