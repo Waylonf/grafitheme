@@ -13,6 +13,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<!-- TODO Add dns prefetch with hook -->
+		<!-- TODO Add dns prefetch for other resources -->
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php wp_head(); ?>
@@ -35,7 +36,7 @@
 		                            <div class="navbar-header">
 
 		                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-		                                    <span class="sr-only">Toggle navigation</span>
+		                                    <span class="sr-only"><?php _e( 'Toggle navigation', 'TEXTDOMAIN' ); ?></span>
 		                                    <span class="icon-bar"></span>
 		                                    <span class="icon-bar"></span>
 		                                    <span class="icon-bar"></span>
