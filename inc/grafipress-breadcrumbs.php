@@ -20,58 +20,76 @@ function gws_breadcrumbs( $custom_home_icon = false, $custom_post_types = false)
     
     $is_custom_post = $custom_post_types ? is_singular( $custom_post_types ) : false;
     
-    if (!is_front_page() && !is_home()) {
+    if ( ! is_front_page() && ! is_home() ) :
+        
         echo '<ol class="breadcrumb">';
         echo '<li><a href="';
-        echo get_option('home');
+        echo get_option( 'home' );
         echo '">';
-        if( $custom_home_icon )
+        
+        // Echo home icon or not
+        if( $custom_home_icon ) :
             echo $custom_home_icon;
-            else
-                bloginfo('name');
+        else :
+            bloginfo( 'name' );
+        endif;
+
         echo "</a></li>";
-        if ( has_category() ) {
-            echo '<li class="active"><a href="'.esc_url( get_permalink( get_page( get_the_category($post->ID) ) ) ).'">';
-            the_category(', ');
+        
+        if ( has_category() ) :
+            echo '<li class="active"><a href="' . esc_url( get_permalink( get_page( get_the_category( $post->ID ) ) ) ) . '">';
+            the_category( ', ' );
             echo '</a></li>';
-        }
-        if ( is_category() || is_single() || $is_custom_post ) {
+        endif;
+
+        if ( is_category() || is_single() || $is_custom_post ) :
+            
             if ( is_category() )
-                echo '<li class="active"><a href="'.esc_url( get_permalink( get_page( get_the_category($post->ID) ) ) ).'">'.get_the_category($post->ID)[0]->name.'</a></li>';
-            if ( $is_custom_post ) {
-                echo '<li class="active"><a href="'.get_option('home').'/'.get_post_type_object( get_post_type($post) )->name.'">'.get_post_type_object( get_post_type($post) )->label.'</a></li>';
-                if ( $post->post_parent ) {
-                    $home = get_page(get_option('page_on_front'));
-                    for ($i = count($post->ancestors)-1; $i >= 0; $i--) {
-                        if (($home->ID) != ($post->ancestors[$i])) {
+                echo '<li class="active"><a href="' . esc_url( get_permalink( get_page( get_the_category( $post->ID ) ) ) ) . '">' . get_the_category( $post->ID ) [ 0 ]->name . '</a></li>';
+            endif;
+            
+            if ( $is_custom_post ) :
+                echo '<li class="active"><a href="' . get_option( 'home' ) . '/' . get_post_type_object( get_post_type($post) )->name . '">' . get_post_type_object( get_post_type( $post ) )->label . '</a></li>';
+                if ( $post->post_parent ) :
+                    $home = get_page( get_option( 'page_on_front' ) );
+                    for ( $i = count( $post->ancestors ) - 1; $i >= 0; $i-- ) :
+                        if ( ( $home->ID ) != ( $post->ancestors[ $i ] ) ) :
                             echo '<li><a href="';
                             echo get_permalink($post->ancestors[$i]); 
                             echo '">';
                             echo get_the_title($post->ancestors[$i]);
                             echo "</a></li>";
-                        }
-                    }
-                }
-            }
-            if ( is_single() )
+                        endif;
+                    endfor;
+                endif;
+            endif;
+
+            if ( is_single() ) :
                 echo '<li class="active">'.get_the_title($post->ID).'</li>';
-        } elseif ( is_page() && $post->post_parent ) {
+            endif;
+
+        elseif ( is_page() && $post->post_parent ) :
             $home = get_page(get_option('page_on_front'));
-            for ($i = count($post->ancestors)-1; $i >= 0; $i--) {
-                if (($home->ID) != ($post->ancestors[$i])) {
+            for ( $i = count( $post->ancestors ) -1; $i >= 0; $i-- ) :
+                if ( ( $home->ID ) != ( $post->ancestors[ $i ] ) ) :
                     echo '<li><a href="';
-                    echo get_permalink($post->ancestors[$i]); 
+                    echo get_permalink( $post->ancestors[ $i ] ); 
                     echo '">';
-                    echo get_the_title($post->ancestors[$i]);
+                    echo get_the_title( $post->ancestors[ $i ] );
                     echo "</a></li>";
-                }
-            }
-            echo '<li class="active">'.get_the_title($post->ID).'</li>';
-        } elseif (is_page()) {
-            echo '<li class="active">'.get_the_title($post->ID).'</li>';
-        } elseif (is_404()) {
-            echo '<li class="active">404</li>';
-        }
+                endif;
+            endfor;
+            echo '<li class="active">' . get_the_title( $post->ID ) . '</li>';
+
+        elseif ( is_page() ) :
+            echo '<li class="active">' . get_the_title( $post->ID ) . '</li>';
+
+        elseif ( is_404() ) :
+            echo '<li class="active">' . __( '404', 'TEXTDOMAIN' ) . '</li>';
+
+        endif;
+
         echo '</ol>';
-    }
+
+    endif;
 }
