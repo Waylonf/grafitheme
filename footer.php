@@ -13,22 +13,22 @@
             <?php if( ! 0 == get_option( 'footer_widget_count', 3 ) ) : ?>
                 <div class="container widget-container">
                     <div class="row">
-                    
+
                     <?php $widget_area_count = '';
-                    
+
                     while( $widget_area_count <= get_option( 'footer_widget_count', 3 ) ) :
                         if ( is_active_sidebar( 'footer_widget_' . $widget_area_count ) ) :  ?>
-                        
+
                         <div id="widget-area" class="widget-area widget-area-<?php echo $widget_area_count = ( $widget_area_count != NULL ? $widget_area_count : '1') ?> col-md-<?php echo 12 / get_option( 'footer_widget_count', '' ) ?>" role="complementary">
                             <?php dynamic_sidebar( 'footer_widget_' . $widget_area_count ); ?>
                         </div> <!--.widget-area -->
-                        
+
                         <?php endif;
-                        
+
                         $widget_area_count++;
-                    
+
                     endwhile; ?>
-                    
+
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
 
