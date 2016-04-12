@@ -24,6 +24,11 @@
  * @subpackage  {THEME-NAME}
  * @since       {THEME-NAME} {THEME-VERSION}
  *
+ * @todo Create 404 page template with content loop
+ * @todo Create search page with content loop
+ * @todo Update index.php template
+ * @todo Create base font-page.php template
+ *
  * @todo Remove Constant variables in functions.php used accross the site
  * @todo Check for consistant docblock headers in all files
  * @todo Wrap all function in child theme friendly check function
