@@ -24,7 +24,7 @@
 			<!-- TODO Check that the skip to content link targets the correct div -->
 			<a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'TEXTDOMAIN' ); ?></a>
 			<?php //get_template_part( 'plugables/topbar'); ?>
-		
+
 			<header id="masthead" class="site-header" role="banner">
 
 				<!-- Navigation -->
@@ -66,7 +66,6 @@
 		                </div> <!-- /.container -->
 		            </div><!-- /.navbar -->
 		        </nav><!-- /.site-navigation -->
-		    
 
 			    <?php $header_image = get_header_image();
 
